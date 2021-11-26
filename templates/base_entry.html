@@ -10,9 +10,9 @@
 <body>
 
 <div class="sidebar">
-  <a class="active" href="{% url 'dashboard:dash' %}">Info</a>
+  <a href="{% url 'dashboard:dash' %}">Info</a>
   <a href="{% url 'dashboard:vote' %}">Vote Now</a>
-  <a href="#contact">Results</a>
+  <a href="{% url 'dashboard:Result' %}">Results</a>
   <a href="#about">Contact</a>
 </div>
 

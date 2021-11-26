@@ -2,6 +2,16 @@
 {% load static %}
 
 {% block content %}
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+        }
+        .flag{
+            width:170px;
+            height: 512px;
+        }
+    </style>
     <div class="container">
         <div class="row custom-section d-flex align-items-center">
             <div class="col-12 col-lg-4">
@@ -16,7 +26,7 @@
                 {% endif %}
             </div>
             <div class="col-12 col-lg-8">
-                <img class="banner" src="{% static 'mainbenner.png' %}" alt="Team process banner">
+                <img class="flag" src="{% static 'media/flag.png' %}" alt="Team process banner">
             </div>
         </div>
     </div>
