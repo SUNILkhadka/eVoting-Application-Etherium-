@@ -3,12 +3,14 @@ from django.http import HttpResponse
 from django.views import View
 from dashboard.models import Candidate
 # from django.contrib.auth.models import User
+# from accounts.forms import UserForm
 from .forms import AddCandidate
 
 # Create your views here.
 def officer(request):
     can_data = Candidate.objects.all()
     # user_data = User.objects.all()
+    # print(can_data)
     return render(request, 'officer.html', {'candata':can_data})
 
 def add_candidate(request):
