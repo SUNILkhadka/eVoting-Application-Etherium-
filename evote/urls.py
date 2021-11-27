@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.landing, name="landing_page"),
     path('dashboard/', include('dashboard.urls')),
     path('accounts/', include('accounts.urls')),
+    path('officer/', include('officer.urls')),
 ]
 
 

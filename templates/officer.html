@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container">
+<div class="row justify-content-around mt-3 text-center">
+    <div class="col-sm-8">
+        <h1> Welcome Officer </h1>
+    </div>
+</div>
+
+<div class="row justify-content-around">
+    <div class="col-sm-10">
+        <a href="{% url 'officer:addcand' %}" class="btn btn-primary float-right">Add Candidate</a>
+    </div>
+</div>
+
+<div class="row justify-content-around mt-1 text-center">
+    <div class="col-sm-10">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Slogan</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for cand in candata %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{cand.name}}</td>
+                    <td>{{cand.team}}</td>
+                    <td>{{cand.slogan}}</td>
+                    <td>{{cand.description}}</td>
+                    <td>
+                        <form action={% url 'officer:delcand' %} method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value={{cand.id}}>
+                        <input type="submit" value="Delete" class="btn-sm btn-danger">
+                        </form>
+                    </td>
+                    <td>
+                        {% comment %} <a href="{% url 'officer:editcand' cand.id %}" class="btn btn-sm btn-info">Edit</a> {% endcomment %}
+
+                        <form action={% url 'officer:editcand' cand.id %}>
+                        {% csrf_token %}
+                        <input type="submit" value="Edit" class="btn-sm btn-info">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% comment %} CRUD for USER start here {% endcomment %}
+{% comment %} </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class="row justify-content-around">
+    <div class="col-sm-10">
+        <a href="#" class="btn btn-primary float-right">Add User</a>
+    </div>
+</div>
+
+<div class="row justify-content-around mt-1 text-center">
+    <div class="col-sm-10">
+        <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">User</th>
+                <th scope="col">Fname</th>
+                <th scope="col">Lname</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div> {% endcomment %}
+{% comment %} CRUD user end here {% endcomment %}
+
+</section>
+
+{% endblock content %}

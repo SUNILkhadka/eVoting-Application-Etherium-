@@ -12,5 +12,5 @@ class Candidate(models.Model):
         return self.name
 
 
-class User(models.Model):
+# class User(models.Model):
     

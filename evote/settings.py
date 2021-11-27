@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'accounts',
+    'officer',
     'crispy_forms',
     'django_fastdev',
 ]
