@@ -31,16 +31,25 @@
                             <a class="nav-link" href="#">Info</a>
                         </li>
 
+                        {% load user_tags %}
+                        {% if request.user|has_group:"Admin" %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'officer:officercrud' %}">Officer</a>
+                        </li>
+                        {% endif %}
+
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link text-primary" href="{% url 'accounts:logout' %}">Logout</a>
                         </li>
                         {% else %}
-                            <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link text-primary" href="{% url 'accounts:login' %}">Login/Signup</a>
                         </li>
                         {% endif %}
-
+                        
+                        
+ 
                     </ul>
                 </div>
             </nav>
