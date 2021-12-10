@@ -5,6 +5,10 @@ app_name = 'officer'
 
 urlpatterns = [
     path('', views.officer, name="officercrud"),
+    path('candidates', views.candidate, name="cand"),
+    path('users', views.realuser, name="user"),
+    path('quaries', views.quaries, name="quary"),
+    path('quariessolved/', views.quarysolved, name="quarysolved"),
     path('addcand/', views.add_candidate, name="addcand"),
     path('delcand/', views.delete_candidate, name="delcand"),
     path('editcand/<int:id>/', views.edit_candidate, name="editcand"),

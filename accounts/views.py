@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .forms import UserForm
+from .models import Profile
 
 # Create your views here.
 
@@ -10,6 +11,7 @@ def signup_view(request):
         form=UserForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # newprofile = Profile(phone_num=p_num)
             # log the user in
             login(request,user)
             return redirect('accounts:login')
