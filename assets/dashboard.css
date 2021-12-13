@@ -20,15 +20,15 @@ body {
     text-decoration: none;
   }
    
-  .sidebar a.active {
+  /* .sidebar a.active {
     background-color: #DC143C;
     color: white;
-  }
+  } */
   
-  .sidebar a:hover:not(.active) {
+  /* .sidebar a:hover:not(.active) {
     background-color: #f08080;
     color: white;
-  }
+  } */
   
   div.content {
     margin-left: 200px;

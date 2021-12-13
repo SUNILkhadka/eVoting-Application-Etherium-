@@ -4,11 +4,17 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
-    phone_num = models.CharField(max_length=15, default='0')
-    age = models.IntegerField(default='0')
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    token = models.CharField(max_length=100, default='0')
+    father_name = models.CharField(max_length=100, default='')
+    grand_father_name = models.CharField(max_length=100, default='')
+    phone_number = models.CharField(max_length=15, default='')
+    age = models.IntegerField(default='')
+    gender = models.CharField(max_length=100, default='0')
+    provience_number = models.CharField(max_length=15, default='0')
+    district = models.CharField(max_length=15, default='0')
+    token = models.CharField(max_length=100, default='')
 
 
     def __str__(self):
-        return str(self.user)
+        return str(self.father_name)

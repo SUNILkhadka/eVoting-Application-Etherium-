@@ -7,7 +7,9 @@
                     {% load crispy_forms_tags %}
                     <form action="{% url 'accounts:login' %}" method="post">
                          {% csrf_token %}
-                         {{ form|crispy }}
+                         <label> Citizenship/Passport.No is your username </label></br>
+                         {{ form.username|as_crispy_field }}</br>
+                         {{ form.password|as_crispy_field }}
                          <input type="submit" value="Login" class="btn btn-primary col-3"></br></br>
                          <p> Don't have an account? <a href="{% url 'accounts:signup' %}"> Click here </a> </p>
                     </form>
