@@ -150,3 +150,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'email'
 # EMAIL_HOST_PASSWORD = 'password'
+
+
+# user will auto logout after 20 Minute inside app
+SESSION_COOKIE_AGE = 1200
