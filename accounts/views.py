@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 def signup_view(request):
     if request.method == 'POST':
         form=UserForm(request.POST)
-        profile_form=register_form(request.POST)
+        profile_form=register_form(data=request.POST,files=request.FILES)
         if form.is_valid() and profile_form.is_valid():
             user = form.save(commit=False)
             user.save()

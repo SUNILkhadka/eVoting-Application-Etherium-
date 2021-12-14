@@ -64,12 +64,19 @@ class register_form(forms.ModelForm):
     gender = forms.ChoiceField(choices = GENDER)
     gender.widget.attrs.update({'class': 'form-control'})
 
+    dob_ad = forms.DateField()
+    dob_ad.widget.attrs.update({'placeholder': 'YYYY-MM-DD'})
+    dob_ad.widget.attrs.update({'class': 'form-control'})
+
+    dob_bs = forms.DateField()
+    dob_bs.widget.attrs.update({'placeholder': 'YYYY-MM-DD'})
+    dob_bs.widget.attrs.update({'class': 'form-control'})
+
     class Meta:
         model = Profile
-        fields = ['father_name','grand_father_name','provience_number','district','phone_number','gender','age']
+        fields = ['docs_front','docs_back','user_image','father_name','grand_father_name','provience_number','district','phone_number','gender','dob_ad','dob_bs']
         widgets = {
             'phone_number':forms.TextInput(attrs={'class':'form-control'}),
-            'age':forms.TextInput(attrs={'class':'form-control'}),
             'father_name':forms.TextInput(attrs={'class':'form-control'}),
             'grand_father_name':forms.TextInput(attrs={'class':'form-control'}),
         }
